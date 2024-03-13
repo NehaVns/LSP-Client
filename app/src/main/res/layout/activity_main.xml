@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <!-- res/layout/toolbar.xml -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/app_icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/app_icon" />
+
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/baseline_menu_24"
+            android:layout_gravity="end"/>
+
+<!--        <ImageView-->
+<!--            android:layout_width="45dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:src="@drawable/ic_menu"-->
+<!--            android:outlineSpotShadowColor="@color/white"-->
+<!--            tools:layout_editor_absoluteX="100dp"-->
+<!--            tools:layout_editor_absoluteY="15dp"/>-->
+
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cd_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="153dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="15dp">
+
+                    <ImageView
+                        android:id="@+id/iv_lady"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/ic_lady"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_bannerText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tired of waiting for Clients?"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_bannerText2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_lady"
+                        app:layout_constraintTop_toTopOf="@id/iv_lady" />
+
+                    <TextView
+                        android:id="@+id/tv_bannerText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wait NO MORE!!!"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_bannerText3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_lady"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bannerText1" />
+
+                    <TextView
+                        android:id="@+id/tv_bannerText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LegalBridge is here"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_lady"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_lady"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bannerText2" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_options"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bannerText3" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_iconList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/cd_banner">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_enquiry"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_enquiry"
+                        app:layout_constraintEnd_toStartOf="@id/iv_clients"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_enquiry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enquiry"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_enquiry"
+                        app:layout_constraintStart_toStartOf="@+id/iv_enquiry"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_enquiry" />
+
+                    <ImageView
+                        android:id="@+id/iv_clients"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_clients"
+                        app:layout_constraintEnd_toStartOf="@id/iv_case"
+                        app:layout_constraintStart_toEndOf="@+id/iv_enquiry"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_clients"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Client"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_clients"
+                        app:layout_constraintStart_toStartOf="@+id/iv_clients"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_clients" />
+
+                    <ImageView
+                        android:id="@+id/iv_case"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_case"
+                        app:layout_constraintEnd_toStartOf="@id/iv_payment_link"
+                        app:layout_constraintStart_toEndOf="@id/iv_clients"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_case"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Case"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_case"
+                        app:layout_constraintStart_toStartOf="@+id/iv_case"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_case" />
+
+                    <ImageView
+                        android:id="@+id/iv_payment_link"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_payment_link"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_case"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_payment_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Link"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_payment_link"
+                        app:layout_constraintStart_toStartOf="@+id/iv_payment_link"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_payment_link" />
+
+                    <ImageView
+                        android:id="@+id/iv_calendar"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_calendar"
+                        app:layout_constraintEnd_toEndOf="@id/iv_judgement"
+                        app:layout_constraintEnd_toStartOf="@id/iv_judgement"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toBottomOf="@id/tv_enquiry" />
+
+                    <TextView
+                        android:id="@+id/tv_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calendar"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_calendar"
+                        app:layout_constraintStart_toStartOf="@+id/iv_calendar"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_calendar" />
+
+                    <ImageView
+                        android:id="@+id/iv_judgement"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_judgement"
+                        app:layout_constraintEnd_toStartOf="@id/iv_request"
+                        app:layout_constraintStart_toEndOf="@id/iv_calendar"
+
+                        app:layout_constraintTop_toBottomOf="@id/tv_clients" />
+
+                    <TextView
+                        android:id="@+id/tv_judgement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Judgement"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_judgement"
+                        app:layout_constraintStart_toStartOf="@+id/iv_judgement"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_judgement" />
+
+                    <ImageView
+                        android:id="@+id/iv_request"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_request"
+                        app:layout_constraintEnd_toStartOf="@id/iv_talk_zone"
+                        app:layout_constraintStart_toEndOf="@id/iv_judgement"
+
+                        app:layout_constraintTop_toBottomOf="@id/tv_case" />
+
+                    <TextView
+                        android:id="@+id/tv_request"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Request"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_request"
+                        app:layout_constraintStart_toStartOf="@+id/iv_request"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_request" />
+
+                    <ImageView
+                        android:id="@+id/iv_talk_zone"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_talk_zone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_request"
+
+                        app:layout_constraintTop_toBottomOf="@id/tv_payment_link" />
+
+                    <TextView
+                        android:id="@+id/tv_talk_zone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Talk Zone"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_talk_zone"
+                        app:layout_constraintStart_toStartOf="@+id/iv_talk_zone"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_talk_zone" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linear"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_iconList">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_balance"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    android:layout_weight="1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_mybalance"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My Balance"
+                            android:id="@+id/tv_balance"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_balance"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_balance"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:text="₹30.00"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            app:layout_constraintTop_toBottomOf="@id/tv_balance"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_enquiries"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp"
+                    android:layout_weight="1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_enquiries"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Enquiries"
+                            android:id="@+id/tv_enquires"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_enquiries"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_enquiries"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:text="60+"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            app:layout_constraintTop_toBottomOf="@id/tv_enquires"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@id/linear">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <FrameLayout
+                        android:id="@+id/frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DFDDDD"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:text="13324 New Enquiries"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_option1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="5dp"
+                            android:padding="5dp"
+                            android:backgroundTint="#F4DFD6"
+                            app:layout_constraintTop_toBottomOf="@id/frame">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/eq_2"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="13sp"
+                                    android:text="EnquiryID : 2351" />
+
+                                <TextView
+                                    android:id="@+id/tv_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="I am a wife of an abusive husband. I have been used to his violence for quite some time but now it's enough. He has begun to hit our children, taking out anger on them. I can’t allow that on my watch"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/btn_1"
+                                    app:layout_constraintTop_toBottomOf="@id/eq_2"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                                <Button
+                                    android:layout_width="70dp"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/btn_1"
+                                    android:textSize="10dp"
+                                    android:text="OPEN"
+                                    android:backgroundTint="#148F06"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toTopOf="@id/tv_2"
+                                    />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_option2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="5dp"
+                            android:padding="5dp"
+                            android:backgroundTint="#F4DFD6"
+                            app:layout_constraintTop_toBottomOf="@id/cv_option1">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/eq_3"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="13sp"
+                                    android:text="EnquiryID : 2340" />
+
+                                <TextView
+                                    android:id="@+id/tv_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="I am a wife of an abusive husband. I have been used to his violence for quite some time but now it's enough. He has begun to hit our children, taking out anger on them. I can’t allow that on my watch"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/btn_2"
+                                    app:layout_constraintTop_toBottomOf="@id/eq_3"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                                <Button
+                                    android:layout_width="70dp"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/btn_2"
+                                    android:textSize="10dp"
+                                    android:text="Close"
+                                    android:backgroundTint="#81071F"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toTopOf="@id/tv_3"
+                                    />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_option3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="5dp"
+                            android:padding="5dp"
+                            android:backgroundTint="#F4DFD6"
+                            app:layout_constraintTop_toBottomOf="@id/cv_option2">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/eq_4"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="13sp"
+                                    android:text="EnquiryID : 2340" />
+
+                                <TextView
+                                    android:id="@+id/tv_4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:text="I am a wife of an abusive husband. I have been used to his violence for quite some time but now it's enough. He has begun to hit our children, taking out anger on them. I can’t allow that on my watch"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/btn_3"
+                                    app:layout_constraintTop_toBottomOf="@id/eq_4"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                                <Button
+                                    android:layout_width="70dp"
+                                    android:layout_height="30dp"
+                                    android:id="@+id/btn_3"
+                                    android:textSize="10dp"
+                                    android:text="open"
+                                    android:backgroundTint="#148F06"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toTopOf="@id/tv_4"
+                                    />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
